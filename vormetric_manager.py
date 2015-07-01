@@ -28,6 +28,9 @@ else:
 ###
 # Process Folder if not already worked on.
 def processFolder(fLoc):
+    if "enc" in fLoc:
+        print "This is the enc folder"
+        return False
     if ".bk" in fLoc:
         print "This is a backup folder"
         return False
