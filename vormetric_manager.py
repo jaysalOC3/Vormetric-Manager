@@ -45,8 +45,16 @@ def processFolder(fLoc):
         file.write("1")
     rsyncSrc = fLoc
     rsyncDst = ENC_FOLDER
+    DstFolder = ENC_FOLDER + fLoc.split("/")[2]
     print "RSync: %s %s" % (rsyncSrc, rsyncDst)
     proc = subprocess.call(['rsync','-a',rsyncSrc,rsyncDst])
+    os.remove(open(os.path.join(fLoc, "enc1.stat")))
+    os.remove(open(os.path.join(DstFolder, "enc1.stat")))
+    print "renaming: %s" % fLoc
+    shutil.move(rsyncSrc, rsyncSrc+".bk")
+    print "Linking: %s" % fLoc
+    os.symlink(DstFolder, rsyncSrc)
+    return True
 ###
 ###
 # Find next folder to work on
