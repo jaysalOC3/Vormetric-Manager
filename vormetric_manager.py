@@ -45,7 +45,7 @@ def processFolder(fLoc):
         file.write("1")
     rsyncSrc = fLoc
     rsyncDst = ENC_FOLDER
-    DstFolder = ENC_FOLDER + fLoc.split("/")[2]
+    DstFolder = ENC_FOLDER + "/" + fLoc.split("/")[2]
     print "RSync: %s %s" % (rsyncSrc, rsyncDst)
     proc = subprocess.call(['rsync','-a',rsyncSrc,rsyncDst])
     os.remove(os.path.join(fLoc, "enc1.stat"))
