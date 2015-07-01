@@ -24,11 +24,18 @@ else:
 ###
 
 ###
+# Process Folder if not already worked on.
+def processFolder(fLoc):
+    print (os.path.join(fLoc, "enc1.stat"))
+###
+###
 # Find next folder to work on
 for item in os.listdir(ROOT_FOLDER):
     if os.path.isdir(os.path.join(ROOT_FOLDER, item)):
         if not 'enc' in item:
-            print item
+            folder = os.path.join(ROOT_FOLDER, item)
+            print folder
+            processFolder(folder)
         else:
             print "Skipping %s" % item
 
