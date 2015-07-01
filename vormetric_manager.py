@@ -10,6 +10,9 @@ else:
     print "Please install python 2.7 to use this script."
     exit(1)
 ###
+import shutil
+
+ROOT_FOLDER = '/pmdms_sec_test'
 
 ###
 # Check the root folder to encrypt
