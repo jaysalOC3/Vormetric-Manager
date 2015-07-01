@@ -28,6 +28,9 @@ else:
 ###
 # Process Folder if not already worked on.
 def processFolder(fLoc):
+    if ".bk" in fLoc:
+        print "This is a backup folder"
+        return False
     if os.path.islink(fLoc):
         print "%s is a link and may already be encrypted." % fLoc
         return False
