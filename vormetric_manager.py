@@ -21,6 +21,12 @@ if os.path.exists(ENC_FOLDER):
 else:
     print "Could not find enc folder: Exit"
     exit(1)
+###
 
+###
+# Find next folder to work on
+for item in os.listdir(ROOT_FOLDER):
+    if os.path.isdir(os.path.join(ROOT_FOLDER, item)):
+        print item
 
 ###
