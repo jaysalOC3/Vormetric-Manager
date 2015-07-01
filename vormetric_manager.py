@@ -27,6 +27,9 @@ else:
 # Find next folder to work on
 for item in os.listdir(ROOT_FOLDER):
     if os.path.isdir(os.path.join(ROOT_FOLDER, item)):
-        print item
+        if not 'enc' in item:
+            print item
+        else:
+            print "Skipping %s" % item
 
 ###
