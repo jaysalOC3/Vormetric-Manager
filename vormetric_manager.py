@@ -44,7 +44,7 @@ def processFolder(fLoc):
     with open(os.path.join(fLoc, "enc1.stat"), 'w') as file:
         file.write("1")
     rsyncSrc = fLoc
-    rsyncDst = fLoc
+    rsyncDst = ENC_FOLDER + "/" + fLoc.split("/")[1]
     print rsyncSrc, rsyncDst
     #proc = subprocess.call(['rsync','-a',FOLDER+r'/',FOLDER+r'.enc/'])
 ###
