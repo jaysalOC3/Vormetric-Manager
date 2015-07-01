@@ -45,8 +45,8 @@ def processFolder(fLoc):
         file.write("1")
     rsyncSrc = fLoc
     rsyncDst = ENC_FOLDER + "/" + fLoc.split("/")[2]
-    print rsyncSrc, rsyncDst
-    #proc = subprocess.call(['rsync','-a',FOLDER+r'/',FOLDER+r'.enc/'])
+    print "RSync: %s %s" % (rsyncSrc, rsyncDst)
+    proc = subprocess.call(['rsync','-a',rsyncSrc,rsyncDst])
 ###
 ###
 # Find next folder to work on
